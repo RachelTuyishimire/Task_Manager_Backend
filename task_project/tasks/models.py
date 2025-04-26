@@ -16,7 +16,7 @@ class Task(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     due_date = models.DateTimeField()
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='todo')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='tasks')
+    
     
     def save(self, *args, **kwargs):
         # Check if task is overdue
